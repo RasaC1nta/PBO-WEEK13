@@ -12,7 +12,6 @@ public class Mhs {
     }
 
     private void hitungOtomatis() {
-        // Rumus pembobotan dari PPT
         this.akhir = (uts * 0.35) + (uas * 0.35) + (tugas * 0.30);
         
         if (akhir >= 85) { this.huruf = "A"; this.predikat = "Apik"; }
@@ -20,8 +19,7 @@ public class Mhs {
         else if (akhir >= 55) { this.huruf = "C"; this.predikat = "Cukup"; }
         else { this.huruf = "D"; this.predikat = "Kurang"; }
     }
-
-    // Getter (supaya data bisa diambil oleh Form)
+    
     public String getNim() { return nim; }
     public String getNama() { return nama; }
     public double getAkhir() { return akhir; }

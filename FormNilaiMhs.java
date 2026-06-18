@@ -4,7 +4,7 @@ import java.awt.*;
 import java.sql.*;
 
 public class FormNilaiMhs extends JFrame {
-    // Komponen UI
+    
     JTextField txtNim = new JTextField();
     JTextField txtNama = new JTextField();
     JTextField txtUts = new JTextField();
@@ -19,7 +19,7 @@ public class FormNilaiMhs extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Panel Input
+        
         JPanel pnlInput = new JPanel(new GridLayout(6, 2));
         pnlInput.add(new JLabel(" NIM:")); pnlInput.add(txtNim);
         pnlInput.add(new JLabel(" Nama:")); pnlInput.add(txtNama);
@@ -30,7 +30,7 @@ public class FormNilaiMhs extends JFrame {
         JButton btnSimpan = new JButton("Simpan Data");
         pnlInput.add(btnSimpan);
         
-        // Setup Tabel
+        
         model.setColumnIdentifiers(new Object[]{"NIM", "Nama", "Akhir", "Huruf", "Predikat"});
         tabel.setModel(model);
 
@@ -46,7 +46,6 @@ public class FormNilaiMhs extends JFrame {
 
     private void simpanData() {
         try {
-            // Gunakan class Mhs untuk hitung otomatis
             Mhs m = new Mhs(txtNim.getText(), txtNama.getText(), 
                     Double.parseDouble(txtUts.getText()), 
                     Double.parseDouble(txtUas.getText()), 
